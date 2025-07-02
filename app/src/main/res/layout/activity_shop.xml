@@ -21,11 +21,12 @@
             android:gravity="center"
             android:layout_marginTop="32dp"
             android:text="购物清单案例" />
-        <View 
+        <View
             android:layout_marginTop="8dp"
             style="@style/hline"
             />
         <ListView
+            android:id="@+id/listView_shop"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

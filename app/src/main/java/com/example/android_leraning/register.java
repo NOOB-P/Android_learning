@@ -17,18 +17,7 @@ import com.example.android_leraning.databinding.ActivityRegisterBinding;
 
 public class register extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
 
-    class User{
-        public boolean isMan;
-        public boolean is_jump;
-        public boolean is_sing;
-        public boolean is_rap;
-        public boolean is_basketball;
-        public String account;
-        public String password;
-    }
-
     ActivityRegisterBinding binding;
-    User user;
     String output;
 
     @Override
