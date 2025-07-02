@@ -3,9 +3,12 @@ package com.example.android_leraning;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,12 +59,16 @@ public class shop extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup) {
             ShopItemBinding binding;
             if(view == null){
-                binding = ShopItemBinding.inflate(getLayoutInflater());
+                binding = ShopItemBinding.inflate(getLayoutInflater(), viewGroup, false);
                 view = binding.getRoot();
                 view.setTag(binding);
             }else{
                 binding = (ShopItemBinding) view.getTag();
             }
+
+            view.setOnClickListener(v -> {
+                Log.d("mieye", "item:" + name[i]);
+            });
 
             binding.txtShopName.setText(name[i]);
             binding.txtShopPrice.setText(price[i]);

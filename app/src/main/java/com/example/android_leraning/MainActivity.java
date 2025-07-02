@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, shop.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_news){
-
+            Intent intent = new Intent(this, News.class);
+            startActivity(intent);
         }
     }
 }
