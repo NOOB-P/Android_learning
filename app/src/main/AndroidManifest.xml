@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Android_leraning"
         tools:targetApi="31">
         <activity
+            android:name=".Takeaway_menu"
+            android:exported="false" />
+        <activity
             android:name=".News"
             android:exported="false" />
         <activity

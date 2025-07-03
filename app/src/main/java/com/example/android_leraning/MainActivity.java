@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.BtnRegister.setOnClickListener(this);
         binding.BtnNews.setOnClickListener(this);
         binding.BtnStore.setOnClickListener(this);
+        binding.BtnTakeawayMenu.setOnClickListener(this);
+        binding.BtnAccountSave.setOnClickListener(this);
+        binding.BtnCantactQuery.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(view.getId() == R.id.Btn_news){
             Intent intent = new Intent(this, News.class);
             startActivity(intent);
+        }else if(view.getId() == R.id.Btn_takeaway_menu){
+            Intent intent = new Intent(this, Takeaway_menu.class);
+            startActivity(intent);
+        }else if(view.getId() == R.id.Btn_account_save){
+
+        }else if(view.getId() == R.id.Btn_cantact_query){
+
         }
     }
 }

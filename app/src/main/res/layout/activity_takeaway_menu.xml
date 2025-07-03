@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Takeaway_menu">
+
+    <LinearLayout
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:text="外卖菜单案例"/>
+        <View style="@style/hline"/>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tvNavigationBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="点菜" />
+
+            <TextView
+                style="@style/tvNavigationBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评论" />
+
+            <TextView
+                style="@style/tvNavigationBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商家" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    style="@style/tvLeftStyle"
+                    android:id="@+id/tv_order"
+                    android:clickable="true"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:text="点餐" />
+
+                <TextView
+                    style="@style/tvLeftStyle"
+                    android:clickable="true"
+                    android:id="@+id/tv_recommend"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:text="推荐" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fragment_right"
+                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent">
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

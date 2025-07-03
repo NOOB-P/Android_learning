@@ -58,7 +58,29 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent" >
+
+                <Button
+                    android:id="@+id/Btn_takeaway_menu"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="外卖菜单" />
+
+                <Button
+                    android:id="@+id/Btn_account_save"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="账号存储" />
+
+                <Button
+                    android:id="@+id/Btn_cantact_query"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="通讯录查询" />
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
