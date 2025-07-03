@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, Takeaway_menu.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_account_save){
-
+            Intent intent = new Intent(this, save_acount.class);
+            startActivity(intent);
         }else if(view.getId() == R.id.Btn_cantact_query){
 
         }
