@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, save_acount.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_cantact_query){
-
+            Intent intent = new Intent(this, get_Contact.class);
+            startActivity(intent);
         }
     }
 }
