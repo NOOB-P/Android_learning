@@ -46,7 +46,7 @@ public class save_acount extends AppCompatActivity implements View.OnClickListen
         SharedPreferences sp = getSharedPreferences("data", MODE_PRIVATE);
         String account = sp.getString("account", null);
         String password = sp.getString("password", null);
-        if(!account.isEmpty() && !password.isEmpty()){
+        if(account != null && password != null && !account.isEmpty() && !password.isEmpty()){
             binding.editAccount2.setText(account);
             binding.editPassword2.setText(password);
         }
@@ -57,9 +57,9 @@ public class save_acount extends AppCompatActivity implements View.OnClickListen
         String user = new String(content);
         account = user.split(" ")[0];
         password = user.split(" ")[1];
-        if(!account.isEmpty() && !password.isEmpty()){
-            binding.editAccount1.setText(account);
-            binding.editPassword1.setText(password);
+        if(account != null && password != null && !account.isEmpty() && !password.isEmpty()){
+            binding.editAccount2.setText(account);
+            binding.editPassword2.setText(password);
         }
 
         MySqlHelper helper = new MySqlHelper(this);
@@ -71,9 +71,9 @@ public class save_acount extends AppCompatActivity implements View.OnClickListen
                 password = cursor.getString(cursor.getColumnIndex("password"));
                 Log.d("mieye", account + ' ' + password);
             }
-            if(!account.isEmpty() && !password.isEmpty()){
-                binding.editAccount3.setText(account);
-                binding.editPassword3.setText(password);
+            if(account != null && password != null && !account.isEmpty() && !password.isEmpty()){
+                binding.editAccount2.setText(account);
+                binding.editPassword2.setText(password);
             }
         }
     }
