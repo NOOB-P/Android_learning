@@ -63,6 +63,7 @@ public class Takeaway_menu extends AppCompatActivity {
 
     @SuppressLint("ResourceAsColor")
     public void clickEvent(){
+        //由于主题原因，用color.xml中的标签会被主题颜色覆盖，懒得改了
         binding.tvOrder.setOnClickListener(view -> {
             switchFragment(list_goods1);
             binding.tvOrder.setTextColor(Color.rgb(0, 0,0));

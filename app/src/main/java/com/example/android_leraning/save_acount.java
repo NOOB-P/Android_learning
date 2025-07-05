@@ -58,8 +58,8 @@ public class save_acount extends AppCompatActivity implements View.OnClickListen
         account = user.split(" ")[0];
         password = user.split(" ")[1];
         if(account != null && password != null && !account.isEmpty() && !password.isEmpty()){
-            binding.editAccount2.setText(account);
-            binding.editPassword2.setText(password);
+            binding.editAccount1.setText(account);
+            binding.editPassword1.setText(password);
         }
 
         MySqlHelper helper = new MySqlHelper(this);
@@ -72,8 +72,8 @@ public class save_acount extends AppCompatActivity implements View.OnClickListen
                 Log.d("mieye", account + ' ' + password);
             }
             if(account != null && password != null && !account.isEmpty() && !password.isEmpty()){
-                binding.editAccount2.setText(account);
-                binding.editPassword2.setText(password);
+                binding.editAccount3.setText(account);
+                binding.editPassword3.setText(password);
             }
         }
     }
