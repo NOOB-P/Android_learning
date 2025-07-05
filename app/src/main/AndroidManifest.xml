@@ -15,10 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_leraning"
         tools:targetApi="31">
+        <activity
+            android:name=".broadcast"
+            android:exported="false" />
+
         <provider
             android:name=".myContentProvide"
             android:authorities="com.example.android_leraning"
             android:exported="true" />
+
         <activity
             android:name=".data_observer"
             android:exported="false" />

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".broadcast">
+
+    <LinearLayout
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="广播" />
+        <View
+            android:layout_marginTop="8dp"
+            style="@style/hline" />
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Btn_send_order_boradcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发送有序广播" />
+            <Button
+                android:id="@+id/Btn_send_boradcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发送普通广播" />
+
+            <TextView
+                android:id="@+id/txt_1"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="接收1" />
+
+            <TextView
+                android:id="@+id/txt_2"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="接收2" />
+
+            <TextView
+                android:id="@+id/txt3"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="接收3" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="16dp"
+            android:id="@+id/txt_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="电量：" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

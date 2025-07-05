@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, data_observer.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_broadcast){
-
+            Intent intent = new Intent(this, broadcast.class);
+            startActivity(intent);
         }else if(view.getId() == R.id.Btn_server){
 
         }
