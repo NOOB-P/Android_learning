@@ -1,15 +1,11 @@
 package com.example.android_leraning;
 
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Switch;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.android_leraning.databinding.ActivityMainBinding;
 
@@ -31,6 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.BtnDataObserver.setOnClickListener(this);
         binding.BtnServer.setOnClickListener(this);
         binding.BtnBroadcast.setOnClickListener(this);
+        binding.BtnServer.setOnClickListener(this);
+        binding.BtnWebView.setOnClickListener(this);
+        binding.BtnVideoPlayer.setOnClickListener(this);
+        binding.BtnTcpSocket.setOnClickListener(this);
+        binding.BtnUdpSocket.setOnClickListener(this);
+        binding.BtnHttp.setOnClickListener(this);
+        binding.BtnBluetooth.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +64,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, broadcast.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_server){
+            Intent intent = new Intent(this, musicplayer.class);
+            startActivity(intent);
+        }else if(view.getId() == R.id.Btn_video_player){
+
+        }else if(view.getId() == R.id.Btn_tcp_socket){
+
+        }else if(view.getId() == R.id.Btn_udp_socket){
+
+        }else if(view.getId() == R.id.Btn_http){
+
+        }else if(view.getId() == R.id.Btn_bluetooth){
+
+        }else if(view.getId() == R.id.Btn_web_view){
 
         }
     }

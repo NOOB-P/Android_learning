@@ -2,16 +2,9 @@ package com.example.android_leraning;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
-import android.content.ContentProvider;
 import android.content.ContentValues;
-import android.content.Context;
-import android.content.UriMatcher;
 import android.database.ContentObserver;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,17 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.android_leraning.databinding.ActivityDataObserverBinding;
-
-import java.net.URI;
 
 public class data_observer extends AppCompatActivity implements View.OnClickListener {
     ActivityDataObserverBinding binding;

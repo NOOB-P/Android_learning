@@ -2,22 +2,11 @@ package com.example.android_leraning;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.graphics.ColorSpace;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.compose.ui.graphics.colorspace.Rgb;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_leraning.databinding.ActivityTakeawayMenuBinding;
 
