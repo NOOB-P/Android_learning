@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, musicplayer.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_video_player){
-
+            Intent intent = new Intent(this, video.class);
+            startActivity(intent);
         }else if(view.getId() == R.id.Btn_tcp_socket){
 
         }else if(view.getId() == R.id.Btn_udp_socket){

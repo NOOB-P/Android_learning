@@ -15,8 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_leraning"
         tools:targetApi="31">
-        <service android:name=".music_server"
-            android:exported="false"/>
+        <activity
+            android:name=".video"
+            android:exported="false" />
+
+        <service
+            android:name=".music_server"
+            android:exported="false" />
+
         <activity
             android:name=".musicplayer"
             android:exported="false" />
