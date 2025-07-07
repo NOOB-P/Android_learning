@@ -85,41 +85,44 @@ public class video extends AppCompatActivity implements View.OnClickListener, Me
 
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioAttributes(
-                new AudioAttributes.Builder()
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .setUsage(AudioAttributes.USAGE_MEDIA)
-                        .build()
-        );
-        try {
-            mediaPlayer.setDataSource(video.this, Uri.parse(uri));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        mediaPlayer.setDisplay(holder);
-        mediaPlayer.prepareAsync();
-        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                binding.BtnSvContinue.setVisibility(View.VISIBLE);
-                binding.BtnSvPause.setVisibility(View.VISIBLE);
-                binding.BtnSvPlay.setVisibility(View.VISIBLE);
-                addTimer();
-                countDownTimer = new CountDownTimer(3000, 1000) {
-                    @Override
-                    public void onTick(long l) {
-
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        binding.sbSv.setVisibility(View.INVISIBLE);
-                    }
-                };
-                countDownTimer.start();
+        if(mediaPlayer == null){
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setAudioAttributes(
+                    new AudioAttributes.Builder()
+                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                            .setUsage(AudioAttributes.USAGE_MEDIA)
+                            .build()
+            );
+            try {
+                mediaPlayer.setDataSource(video.this, Uri.parse(uri));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        });
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mediaPlayer) {
+                    binding.BtnSvContinue.setVisibility(View.VISIBLE);
+                    binding.BtnSvPause.setVisibility(View.VISIBLE);
+                    binding.BtnSvPlay.setVisibility(View.VISIBLE);
+                    addTimer();
+                    countDownTimer = new CountDownTimer(3000, 1000) {
+                        @Override
+                        public void onTick(long l) {
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            binding.sbSv.setVisibility(View.INVISIBLE);
+                        }
+                    };
+                    countDownTimer.start();
+                }
+            });
+            mediaPlayer.prepareAsync();
+        }
+        //息屏后重新绑定
+        mediaPlayer.setDisplay(surfaceHolder);
 
     }
 
@@ -130,7 +133,7 @@ public class video extends AppCompatActivity implements View.OnClickListener, Me
 
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
-
+        mediaPlayer.pause();
     }
 
     private void addTimer(){
