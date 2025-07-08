@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.BtnServer.setOnClickListener(this);
         binding.BtnWebView.setOnClickListener(this);
         binding.BtnVideoPlayer.setOnClickListener(this);
-        binding.BtnTcpSocket.setOnClickListener(this);
+        binding.BtnTcpSocketClient.setOnClickListener(this);
+        binding.BtnTcpSocketServer.setOnClickListener(this);
         binding.BtnUdpSocket.setOnClickListener(this);
         binding.BtnHttp.setOnClickListener(this);
         binding.BtnBluetooth.setOnClickListener(this);
@@ -69,8 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(view.getId() == R.id.Btn_video_player){
             Intent intent = new Intent(this, video.class);
             startActivity(intent);
-        }else if(view.getId() == R.id.Btn_tcp_socket){
-
+        }else if(view.getId() == R.id.Btn_tcp_socket_client) {
+            Intent intent = new Intent(this, tcp_socket.class);
+            startActivity(intent);
+        }else if (view.getId() == R.id.Btn_tcp_socket_server) {
+            Intent intent = new Intent(this, tcp_socket_server.class);
+            startActivity(intent);
         }else if(view.getId() == R.id.Btn_udp_socket){
 
         }else if(view.getId() == R.id.Btn_http){

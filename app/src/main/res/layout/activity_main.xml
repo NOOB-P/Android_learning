@@ -119,23 +119,30 @@
                     android:text="视频播放器" />
 
                 <Button
-                    android:id="@+id/Btn_tcp_socket"
+                    android:id="@+id/Btn_tcp_socket_client"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Tcp_socket" />
+                    android:text="Tcp_socket_client" />
 
+                <Button
+                    android:id="@+id/Btn_tcp_socket_server"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Tcp_socket_server" />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
                 <Button
                     android:id="@+id/Btn_udp_socket"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="udp_socket" />
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
                 <Button
                     android:id="@+id/Btn_http"
                     android:layout_width="0dp"
@@ -150,6 +157,11 @@
                     android:layout_height="wrap_content"
                     android:text="蓝牙" />
 
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
                 <Button
                     android:id="@+id/Btn_web_view"
                     android:layout_width="0dp"

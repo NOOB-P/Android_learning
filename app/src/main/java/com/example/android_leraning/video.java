@@ -1,5 +1,6 @@
 package com.example.android_leraning;
 
+import android.content.pm.ActivityInfo;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -8,10 +9,13 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
