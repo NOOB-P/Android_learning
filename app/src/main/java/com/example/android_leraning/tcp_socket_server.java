@@ -62,7 +62,11 @@ public class tcp_socket_server extends AppCompatActivity {
                     inputStream.read(data);
                     String[] sp = new String(data).split(":");
                     if(sp[0].equals("txt")){
-                        information = sp[2];
+                        int count = Integer.parseInt(sp[1]);
+                        byte[] content = new byte[count];
+                        String head = sp[0] + ":" + sp[1] + ":";
+                        System.arraycopy(data, head.getBytes().length, content, 0, count);
+                        information = new String(content);
                         handler.post(() -> {
                             list.add(ip + ":" + information);
                             adapter.notifyDataSetChanged();

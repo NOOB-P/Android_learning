@@ -125,7 +125,7 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                 try {
                     socket = new Socket(serverip, PROT);
                     OutputStream outputStream = socket.getOutputStream();
-                    String content_package = "txt:" + content.length() + ":" + content;
+                    String content_package = "txt:" + content.getBytes().length + ":" + content;
                     outputStream.write(content_package.getBytes());
                     outputStream.flush();
                     outputStream.close();
