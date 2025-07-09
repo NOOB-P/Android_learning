@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, tcp_socket_server.class);
             startActivity(intent);
         }else if(view.getId() == R.id.Btn_udp_socket){
-
+            Intent intent = new Intent(this, udp_socket.class);
+            startActivity(intent);
         }else if(view.getId() == R.id.Btn_http){
 
         }else if(view.getId() == R.id.Btn_bluetooth){

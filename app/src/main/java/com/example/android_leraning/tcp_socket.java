@@ -58,9 +58,6 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
                     fileUri = data.getData();
-                    if (fileUri == null) {
-                        return;
-                    }
                     String scheme = fileUri.getScheme();
                     if (scheme == null || ContentResolver.SCHEME_FILE.equals(scheme)) {
                         filepath = fileUri.getPath();
@@ -100,7 +97,7 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
 
         handler = new Handler();
         list = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, list);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         binding.lvText.setAdapter(adapter);
     }
 
@@ -113,7 +110,7 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                 granted = granted && (grantResult == PackageManager.PERMISSION_GRANTED);
             }
             if (!granted) {
-                Toast.makeText(this, "通讯录权限获取失败", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "权限获取失败", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -132,7 +129,10 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                     outputStream.write(content_package.getBytes());
                     outputStream.flush();
                     outputStream.close();
-                    list.add(serverip + ":" + content);
+                    handler.post(()->{
+                        list.add(serverip + ":" + content);
+                        adapter.notifyDataSetChanged();
+                    });
                 } catch (IOException e) {
                     handler.post(()->{
                         Toast.makeText(this, "发送失败",Toast.LENGTH_SHORT).show();
@@ -141,10 +141,12 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                 }
             });
             thread.start();
-            adapter.notifyDataSetChanged();
         }else if(view.getId() == binding.BtnSend2.getId()){
             String serverip = binding.ETIp.getText().toString().trim();
             try {
+                if(fileUri == null){
+                    return;
+                }
                 InputStream inputStream = getContentResolver().openInputStream(fileUri);
                 if (inputStream == null) {
                     return;
@@ -164,7 +166,10 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                         outputStream.write(data);
                         outputStream.flush();
                         outputStream.close();
-                        list.add(serverip + "（文件发送）:" + file.getName());
+                        handler.post(()->{
+                            list.add(serverip + "（文件发送）:" + file.getName());
+                            adapter.notifyDataSetChanged();
+                        });
                     } catch (IOException e) {
                         handler.post(()->{
                             Toast.makeText(this, "发送失败",Toast.LENGTH_SHORT).show();
@@ -173,15 +178,8 @@ public class tcp_socket extends AppCompatActivity implements View.OnClickListene
                     }
                 });
                 thread.start();
-                adapter.notifyDataSetChanged();
-            } catch (FileNotFoundException e) {
-                Log.e("mieye", e.toString());
-                throw new RuntimeException(e);
-
             } catch (IOException e) {
                 Log.e("mieye", e.toString());
-                throw new RuntimeException(e);
-
             }
 
         }else if(view.getId() == binding.BtnChoice.getId()){

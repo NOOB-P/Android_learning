@@ -1,5 +1,7 @@
 package com.example.android_leraning;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.GnssAntennaInfo;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.android_leraning.databinding.ActivityTcpSocketServerBinding;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +48,7 @@ public class tcp_socket_server extends AppCompatActivity {
         }
         handler = new Handler();
         list = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,list);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
         binding.lvText.setAdapter(adapter);
 
         thread = new Thread(() -> {
@@ -67,6 +70,7 @@ public class tcp_socket_server extends AppCompatActivity {
                     }else if(sp[0].equals("pic")){
                         int receivedBytes = data.length;
                         int totalSize = Integer.parseInt(sp[2]);
+                        information = sp[1];
                         FileOutputStream fos = openFileOutput(sp[1], MODE_PRIVATE);
                         String head = sp[0] + ":" + sp[1] + ":" + sp[2] + ":";
                         fos.write(data, head.getBytes().length, data.length - head.getBytes().length);
@@ -81,11 +85,16 @@ public class tcp_socket_server extends AppCompatActivity {
                         fos.flush();
                         fos.close();
                         handler.post(() -> {
-                            list.add(ip + ":(接收图片)" + sp[1]);
+                            list.add(ip + ":(接收图片)" + information);
                             adapter.notifyDataSetChanged();
+
+                            //加载本地图片
+                            File file = new File(getFilesDir(), information);
+                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                            binding.ivRev.setImageBitmap(bitmap);
+
                         });
                     }
-
                     inputStream.close();
                 }
             } catch (IOException e) {

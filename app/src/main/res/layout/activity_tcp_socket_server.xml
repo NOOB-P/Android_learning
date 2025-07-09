@@ -36,7 +36,13 @@
             <ListView
                 android:id="@+id/lv_text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="350dp" />
+
+            <ImageView
+                android:id="@+id/iv_rev"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside" />
         </LinearLayout>
 
 
