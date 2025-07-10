@@ -28,18 +28,19 @@ git clone https://github.com/NOOB-P/Android_learning.git
 - 🔐 权限处理与动态申请
 
 ##### 项目演示
-![[pic/PixPin_2025-07-09_21-03-30.png]]
-![[pic/PixPin_2025-07-09_21-03-48.png]]
-![[pic/PixPin_2025-07-09_21-04-07.png]]
-![[pic/PixPin_2025-07-09_21-04-19.png]]
-![[pic/PixPin_2025-07-09_21-04-29.png]]
-![[pic/PixPin_2025-07-09_21-04-41.png]]
-![[pic/PixPin_2025-07-09_21-04-54.png]]
-![[pic/PixPin_2025-07-09_21-05-06.png]]
-![[pic/PixPin_2025-07-09_21-05-06 1.png]]
-![[pic/PixPin_2025-07-09_21-05-51.png]]
-![[pic/PixPin_2025-07-09_21-05-51 1.png]]
-![[pic/PixPin_2025-07-09_21-07-04.png]]
-![[pic/PixPin_2025-07-09_21-08-08.png]]
-![[pic/PixPin_2025-07-09_21-21-05.png]]
-![[pic/PixPin_2025-07-09_21-22-50.png]]
+![](pic/PixPin_2025-07-10_19-17-27.png)
+![](pic/PixPin_2025-07-09_21-03-48.png)
+![](pic/PixPin_2025-07-09_21-04-07.png)
+![](pic/PixPin_2025-07-09_21-04-19.png)
+![](pic/PixPin_2025-07-09_21-04-29.png)
+![](pic/PixPin_2025-07-09_21-04-41.png)
+![](pic/PixPin_2025-07-09_21-04-54.png)
+![](pic/PixPin_2025-07-09_21-05-06.png)
+![](pic/PixPin_2025-07-09_21-05-061.png)
+![](pic/PixPin_2025-07-09_21-05-51.png)
+![](pic/PixPin_2025-07-09_21-05-511.png)
+![](pic/PixPin_2025-07-09_21-07-04.png)
+![](pic/PixPin_2025-07-09_21-08-08.png)
+![](pic/PixPin_2025-07-09_21-21-05.png)
+![](pic/PixPin_2025-07-09_21-22-50.png)
+![](pic/PixPin_2025-07-10_19-17-45.png)
